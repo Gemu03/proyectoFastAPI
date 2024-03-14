@@ -22,3 +22,13 @@ def test_connection():
 
 # Llama a la función para probar la conexión
 test_connection()
+
+from sqlalchemy.orm import Session
+from .base_de_datos import SessionLocal
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

@@ -1,10 +1,13 @@
 from pydantic import BaseModel
 
 
+
 class EmpleadoBase(BaseModel):
+    id: int
     nombre: str
-    apellido: str
-    email: str
+    edad: str
+    correo: str
+    rol: str
 
 
 class EmpleadoCreate(EmpleadoBase):
